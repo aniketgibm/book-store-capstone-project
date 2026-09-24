@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bookstore.domain.usecase.book.GetRecommendedBooksUseCaseTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-09-24T12:25:45.712Z" hostname="Anikets-MacBook-Pro.local" time="0.065">
+<testsuite name="com.bookstore.domain.usecase.book.GetRecommendedBooksUseCaseTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-09-24T13:33:55.025Z" hostname="Anikets-MacBook-Pro.local" time="0.066">
   <properties/>
-  <testcase name="all category books purchased returns empty" classname="com.bookstore.domain.usecase.book.GetRecommendedBooksUseCaseTest" time="0.06"/>
+  <testcase name="all category books purchased returns empty" classname="com.bookstore.domain.usecase.book.GetRecommendedBooksUseCaseTest" time="0.061"/>
   <testcase name="returns books from purchased categories not yet purchased" classname="com.bookstore.domain.usecase.book.GetRecommendedBooksUseCaseTest" time="0.003"/>
   <testcase name="empty order history returns featured books" classname="com.bookstore.domain.usecase.book.GetRecommendedBooksUseCaseTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>

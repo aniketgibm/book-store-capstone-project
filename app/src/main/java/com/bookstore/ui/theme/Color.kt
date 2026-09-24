@@ -2,30 +2,65 @@ package com.bookstore.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Primary = Color(0xFFD4820A)
-val OnPrimary = Color(0xFFFFFFFF)
-val PrimaryContainer = Color(0xFFFFDDAE)
-val OnPrimaryContainer = Color(0xFF2B1700)
+// ── Light Scheme ──────────────────────────────────────────────────────────────
+// Primary: Deep Ink Navy — authoritative, premium, trustworthy
+val Primary          = Color(0xFF0D1B3E)   // deep navy
+val OnPrimary        = Color(0xFFFFFFFF)
+val PrimaryContainer = Color(0xFFD6E2FF)   // pale sky blue tint
+val OnPrimaryContainer = Color(0xFF001258)
 
-val Secondary = Color(0xFF1A2B5F)
-val OnSecondary = Color(0xFFFFFFFF)
-val SecondaryContainer = Color(0xFFDAE2FF)
-val OnSecondaryContainer = Color(0xFF001257)
+// Secondary: Champagne Gold — premium accent, call-to-action highlights
+val Secondary          = Color(0xFFC9A84C)   // champagne gold
+val OnSecondary        = Color(0xFF1A1100)
+val SecondaryContainer = Color(0xFFFFF0CB)   // very pale gold
+val OnSecondaryContainer = Color(0xFF251A00)
 
-val Tertiary = Color(0xFF6B4A00)
-val OnTertiary = Color(0xFFFFFFFF)
-val TertiaryContainer = Color(0xFFFFDDAE)
+// Tertiary: Warm Burgundy — for badges, tags, accents
+val Tertiary          = Color(0xFF7B2D42)
+val OnTertiary        = Color(0xFFFFFFFF)
+val TertiaryContainer = Color(0xFFFFD9E2)
+val OnTertiaryContainer = Color(0xFF31001C)
 
-val Background = Color(0xFFFFFBF5)
-val OnBackground = Color(0xFF1F1B14)
-val Surface = Color(0xFFFFFBF5)
-val OnSurface = Color(0xFF1F1B14)
-val SurfaceVariant = Color(0xFFF3E0CA)
-val OnSurfaceVariant = Color(0xFF4F4539)
-val Outline = Color(0xFF817567)
+// Surfaces & Backgrounds: warm off-white linen — not stark white, feels premium
+val Background       = Color(0xFFFAF8F5)   // warm off-white linen
+val OnBackground     = Color(0xFF1A1C20)
+val Surface          = Color(0xFFFAF8F5)
+val OnSurface        = Color(0xFF1A1C20)
+val SurfaceVariant   = Color(0xFFE8E4DC)   // warm grey-beige
+val OnSurfaceVariant = Color(0xFF46443C)
+val Outline          = Color(0xFF78756C)
+val OutlineVariant   = Color(0xFFCAC7BE)
 
-val Error = Color(0xFFBA1A1A)
+// Semantic
+val Error   = Color(0xFFBA1A1A)
 val OnError = Color(0xFFFFFFFF)
 
-val SuccessGreen = Color(0xFF2E7D32)
-val WarningAmber = Color(0xFFED6C02)
+// Utility (used directly in composables)
+val SuccessGreen  = Color(0xFF2E7D32)
+val WarningAmber  = Color(0xFFE65100)
+val StarGold      = Color(0xFFF9A825)   // star ratings
+
+// ── Dark Scheme ───────────────────────────────────────────────────────────────
+// Deep charcoal backgrounds with champagne gold primary — ultra-premium night mode
+val DarkPrimary          = Color(0xFFC9A84C)   // champagne gold becomes primary in dark
+val DarkOnPrimary        = Color(0xFF1A1100)
+val DarkPrimaryContainer = Color(0xFF3D2F00)
+val DarkOnPrimaryContainer = Color(0xFFFFDF9E)
+
+val DarkSecondary          = Color(0xFFB0C6FF)
+val DarkOnSecondary        = Color(0xFF002381)
+val DarkSecondaryContainer = Color(0xFF0A3494)
+val DarkOnSecondaryContainer = Color(0xFFDAE2FF)
+
+val DarkTertiary          = Color(0xFFFFB1C8)
+val DarkOnTertiary        = Color(0xFF4A0021)
+val DarkTertiaryContainer = Color(0xFF63162E)
+val DarkOnTertiaryContainer = Color(0xFFFFD9E2)
+
+val DarkBackground   = Color(0xFF111318)   // deep charcoal
+val DarkOnBackground = Color(0xFFE2E2E9)
+val DarkSurface      = Color(0xFF111318)
+val DarkOnSurface    = Color(0xFFE2E2E9)
+val DarkSurfaceVariant   = Color(0xFF2C2C34)
+val DarkOnSurfaceVariant = Color(0xFFC8C6BE)
+val DarkOutline          = Color(0xFF928F88)

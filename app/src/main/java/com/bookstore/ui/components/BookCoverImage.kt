@@ -36,9 +36,14 @@ fun BookCoverImage(
             modifier = modifier.clip(RoundedCornerShape(topStart = 12.dp, topEnd = 12.dp))
         )
     } else {
+        // Premium muted palette — deep navy, teal, burgundy, slate, forest, indigo
         val colors = listOf(
-            Color(0xFF7E57C2), Color(0xFF26A69A), Color(0xFFEF5350),
-            Color(0xFF42A5F5), Color(0xFFFF7043), Color(0xFF66BB6A)
+            Color(0xFF0D1B3E),  // deep navy
+            Color(0xFF1A3A4A),  // deep teal
+            Color(0xFF7B2D42),  // warm burgundy
+            Color(0xFF2C3E50),  // dark slate
+            Color(0xFF1B4332),  // deep forest
+            Color(0xFF2D1B69),  // deep indigo
         )
         val color = colors[title.length % colors.size]
         Box(

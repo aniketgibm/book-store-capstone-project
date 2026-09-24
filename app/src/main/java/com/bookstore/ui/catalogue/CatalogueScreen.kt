@@ -78,11 +78,18 @@ fun CategoryCard(
     category: Category,
     onClick: () -> Unit
 ) {
+    // Premium palette: alternating navy-tint, gold-tint, burgundy-tint, neutral-warm
     val cardColors = listOf(
-        MaterialTheme.colorScheme.primaryContainer,
-        MaterialTheme.colorScheme.secondaryContainer,
-        MaterialTheme.colorScheme.tertiaryContainer,
-        MaterialTheme.colorScheme.surfaceVariant,
+        MaterialTheme.colorScheme.primaryContainer,    // pale navy
+        MaterialTheme.colorScheme.secondaryContainer,  // pale gold
+        MaterialTheme.colorScheme.tertiaryContainer,   // pale burgundy
+        MaterialTheme.colorScheme.surfaceVariant,      // warm grey-beige
+    )
+    val textColors = listOf(
+        MaterialTheme.colorScheme.onPrimaryContainer,
+        MaterialTheme.colorScheme.onSecondaryContainer,
+        MaterialTheme.colorScheme.onTertiaryContainer,
+        MaterialTheme.colorScheme.onSurfaceVariant,
     )
     val colorIndex = category.name.length % cardColors.size
 
@@ -93,7 +100,7 @@ fun CategoryCard(
             .height(120.dp),
         shape = androidx.compose.foundation.shape.RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = cardColors[colorIndex]),
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+        elevation = CardDefaults.cardElevation(defaultElevation = 3.dp)
     ) {
         Column(
             modifier = Modifier
@@ -109,7 +116,8 @@ fun CategoryCard(
             Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = category.name,
-                style = MaterialTheme.typography.titleMedium
+                style = MaterialTheme.typography.titleMedium,
+                color = textColors[colorIndex]
             )
         }
     }

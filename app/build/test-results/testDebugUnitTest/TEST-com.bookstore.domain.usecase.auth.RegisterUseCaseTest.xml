@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bookstore.domain.usecase.auth.RegisterUseCaseTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-09-24T12:25:44.404Z" hostname="Anikets-MacBook-Pro.local" time="0.006">
+<testsuite name="com.bookstore.domain.usecase.auth.RegisterUseCaseTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-09-24T13:33:52.069Z" hostname="Anikets-MacBook-Pro.local" time="0.006">
   <properties/>
   <testcase name="register with empty name fails" classname="com.bookstore.domain.usecase.auth.RegisterUseCaseTest" time="0.002"/>
   <testcase name="register with invalid email fails" classname="com.bookstore.domain.usecase.auth.RegisterUseCaseTest" time="0.001"/>

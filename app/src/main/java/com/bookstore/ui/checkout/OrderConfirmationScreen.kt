@@ -46,7 +46,7 @@ fun OrderConfirmationScreen(
             TopAppBar(
                 title = { Text("Order Confirmed!") },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xFF2E7D32),
+                    containerColor = com.bookstore.ui.theme.SuccessGreen,
                     titleContentColor = Color.White
                 )
             )
@@ -67,7 +67,7 @@ fun OrderConfirmationScreen(
             Surface(
                 modifier = Modifier.size(96.dp).scale(scale),
                 shape = CircleShape,
-                color = Color(0xFF2E7D32)
+                color = com.bookstore.ui.theme.SuccessGreen
             ) {
                 Icon(
                     imageVector = Icons.Default.CheckCircle,

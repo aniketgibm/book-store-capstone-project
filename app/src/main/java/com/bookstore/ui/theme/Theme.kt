@@ -11,38 +11,52 @@ import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
 private val LightColorScheme = lightColorScheme(
-    primary = Primary,
-    onPrimary = OnPrimary,
-    primaryContainer = PrimaryContainer,
-    onPrimaryContainer = OnPrimaryContainer,
-    secondary = Secondary,
-    onSecondary = OnSecondary,
-    secondaryContainer = SecondaryContainer,
+    primary              = Primary,
+    onPrimary            = OnPrimary,
+    primaryContainer     = PrimaryContainer,
+    onPrimaryContainer   = OnPrimaryContainer,
+    secondary            = Secondary,
+    onSecondary          = OnSecondary,
+    secondaryContainer   = SecondaryContainer,
     onSecondaryContainer = OnSecondaryContainer,
-    tertiary = Tertiary,
-    onTertiary = OnTertiary,
-    tertiaryContainer = TertiaryContainer,
-    background = Background,
-    onBackground = OnBackground,
-    surface = Surface,
-    onSurface = OnSurface,
-    surfaceVariant = SurfaceVariant,
-    onSurfaceVariant = OnSurfaceVariant,
-    outline = Outline,
-    error = Error,
-    onError = OnError
+    tertiary             = Tertiary,
+    onTertiary           = OnTertiary,
+    tertiaryContainer    = TertiaryContainer,
+    onTertiaryContainer  = OnTertiaryContainer,
+    background           = Background,
+    onBackground         = OnBackground,
+    surface              = Surface,
+    onSurface            = OnSurface,
+    surfaceVariant       = SurfaceVariant,
+    onSurfaceVariant     = OnSurfaceVariant,
+    outline              = Outline,
+    outlineVariant       = OutlineVariant,
+    error                = Error,
+    onError              = OnError,
 )
 
 private val DarkColorScheme = darkColorScheme(
-    primary = androidx.compose.ui.graphics.Color(0xFFFFB945),
-    onPrimary = androidx.compose.ui.graphics.Color(0xFF472A00),
-    primaryContainer = androidx.compose.ui.graphics.Color(0xFF663E00),
-    secondary = androidx.compose.ui.graphics.Color(0xFFB3C5FF),
-    onSecondary = androidx.compose.ui.graphics.Color(0xFF002082),
-    background = androidx.compose.ui.graphics.Color(0xFF17130C),
-    surface = androidx.compose.ui.graphics.Color(0xFF17130C),
-    onBackground = androidx.compose.ui.graphics.Color(0xFFEDE0D1),
-    onSurface = androidx.compose.ui.graphics.Color(0xFFEDE0D1)
+    primary              = DarkPrimary,
+    onPrimary            = DarkOnPrimary,
+    primaryContainer     = DarkPrimaryContainer,
+    onPrimaryContainer   = DarkOnPrimaryContainer,
+    secondary            = DarkSecondary,
+    onSecondary          = DarkOnSecondary,
+    secondaryContainer   = DarkSecondaryContainer,
+    onSecondaryContainer = DarkOnSecondaryContainer,
+    tertiary             = DarkTertiary,
+    onTertiary           = DarkOnTertiary,
+    tertiaryContainer    = DarkTertiaryContainer,
+    onTertiaryContainer  = DarkOnTertiaryContainer,
+    background           = DarkBackground,
+    onBackground         = DarkOnBackground,
+    surface              = DarkSurface,
+    onSurface            = DarkOnSurface,
+    surfaceVariant       = DarkSurfaceVariant,
+    onSurfaceVariant     = DarkOnSurfaceVariant,
+    outline              = DarkOutline,
+    error                = Error,
+    onError              = OnError,
 )
 
 @Composable
@@ -56,8 +70,12 @@ fun BookStoreTheme(
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
+            // On API 35+ (targetSdk 35) window.statusBarColor is ignored by the system.
+            // Colour is applied by drawing a Box behind the status bar insets in AppNavHost.
+            // We only control icon appearance here.
             WindowCompat.getInsetsController(window, view).apply {
-                isAppearanceLightStatusBars = !darkTheme
+                // Deep navy primary → white status bar icons in both schemes
+                isAppearanceLightStatusBars = false
                 isAppearanceLightNavigationBars = !darkTheme
             }
         }
@@ -65,7 +83,7 @@ fun BookStoreTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
-        content = content
+        typography  = Typography,
+        content     = content
     )
 }

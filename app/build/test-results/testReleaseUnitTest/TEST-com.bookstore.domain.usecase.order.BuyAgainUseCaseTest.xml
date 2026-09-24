@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bookstore.domain.usecase.order.BuyAgainUseCaseTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-24T12:25:45.809Z" hostname="Anikets-MacBook-Pro.local" time="0.023">
+<testsuite name="com.bookstore.domain.usecase.order.BuyAgainUseCaseTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-24T13:33:55.123Z" hostname="Anikets-MacBook-Pro.local" time="0.023">
   <properties/>
   <testcase name="buy again adds all items to cart" classname="com.bookstore.domain.usecase.order.BuyAgainUseCaseTest" time="0.022"/>
   <testcase name="buy again with non-existent order fails" classname="com.bookstore.domain.usecase.order.BuyAgainUseCaseTest" time="0.001"/>

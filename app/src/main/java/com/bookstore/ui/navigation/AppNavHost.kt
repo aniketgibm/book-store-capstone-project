@@ -1,10 +1,11 @@
 package com.bookstore.ui.navigation
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
 import androidx.compose.material.icons.automirrored.filled.*
+import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -12,6 +13,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import androidx.navigation.NavController
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.*
@@ -24,25 +28,66 @@ import com.bookstore.ui.home.HomeScreen
 import com.bookstore.ui.orders.OrderHistoryScreen
 import com.bookstore.ui.profile.*
 import com.bookstore.ui.search.SearchScreen
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import com.bookstore.ui.settings.SettingsScreen
+import com.bookstore.ui.wishlist.WishlistScreen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-// Simple ViewModel to check initial session state
+// ViewModel to resolve the initial start destination from persisted session
 @HiltViewModel
 class SessionViewModel @Inject constructor(
     private val sessionDataStore: SessionDataStore
 ) : ViewModel() {
     val startDestination: StateFlow<String?> = sessionDataStore.currentUserId
         .map { userId ->
-            if (userId != null && userId > 0) Screen.Home.route
-            else if (userId == -1L) Screen.Home.route // guest
-            else Screen.Login.route
+            when {
+                userId != null && userId > 0 -> Screen.Home.route
+                userId == -1L -> Screen.Home.route // guest
+                else -> Screen.Login.route
+            }
         }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), null)
+}
+
+// Routes that belong to the bottom nav (used for selection highlight & bottom bar visibility)
+private val bottomNavRoutes = BottomNavItem.items.map { it.screen.route }
+
+// Bottom bar navigation: pop back to start saving state so tabs remember their scroll/selection,
+// and restore it when the same tab is re-selected.
+private fun NavController.navigateBottomNav(route: String) {
+    navigate(route) {
+        popUpTo(graph.findStartDestination().id) {
+            saveState = true
+        }
+        launchSingleTop = true
+        restoreState = true
+    }
+}
+
+// Drawer navigation strategy:
+//
+// All drawer taps first clear every back-stack entry EXCEPT the graph root (home),
+// discarding any previously saved state. The destination is then placed on top of home.
+// This gives us two invariants:
+//   1. Home always stays as the base — so the back button can pop back to it.
+//   2. No saved state is ever restored when the user taps a bottom-nav tab afterwards,
+//      because saveState=false prevents anything being written to the state store.
+//
+// For bottom-nav sibling destinations (Orders) that the drawer also exposes we use the
+// same approach so their tab highlights correctly once the user is there.
+private fun NavController.navigateFromDrawer(route: String) {
+    navigate(route) {
+        // Pop everything above home (inclusive=false keeps home itself)
+        // saveState=false ensures nothing is written to the saved-state store,
+        // so bottom-nav restoreState=true never replays a stale drawer screen.
+        popUpTo(graph.startDestinationId) {
+            inclusive = false
+            saveState = false
+        }
+        launchSingleTop = true
+    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -53,7 +98,6 @@ fun AppNavHost(
     val startDestination by sessionViewModel.startDestination.collectAsState()
 
     if (startDestination == null) {
-        // Splash / loading
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             CircularProgressIndicator()
         }
@@ -64,18 +108,34 @@ fun AppNavHost(
     val drawerState = rememberDrawerState(DrawerValue.Closed)
     val scope = rememberCoroutineScope()
 
-    val bottomNavRoutes = BottomNavItem.items.map { it.screen.route }
     val currentBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = currentBackStackEntry?.destination?.route
     val showBottomNav = currentRoute in bottomNavRoutes
 
+    // On API 35+, window.statusBarColor is fully ignored by the system.
+    // The only reliable way to colour the status bar is to draw behind its inset
+    // in Compose. The outer Box fills the entire screen with the primary colour;
+    // the inner Box offsets all content below the status bar with a background
+    // colour, leaving only the status-bar strip showing the primary colour.
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.primary)
+    ) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .statusBarsPadding()
+            .background(MaterialTheme.colorScheme.background)
+    ) {
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
             ModalDrawerSheet {
                 DrawerContent(
                     navController = navController,
-                    drawerState = drawerState
+                    drawerState = drawerState,
+                    currentRoute = currentRoute
                 )
             }
         }
@@ -99,11 +159,7 @@ fun AppNavHost(
                                 label = { Text(item.label) },
                                 selected = currentDestination?.hierarchy?.any { it.route == item.screen.route } == true,
                                 onClick = {
-                                    navController.navigate(item.screen.route) {
-                                        popUpTo(navController.graph.findStartDestination().id) { saveState = true }
-                                        launchSingleTop = true
-                                        restoreState = true
-                                    }
+                                    navController.navigateBottomNav(item.screen.route)
                                 }
                             )
                         }
@@ -144,11 +200,11 @@ fun AppNavHost(
                     )
                 }
 
-                // Main screens
+                // Bottom-nav main screens
                 composable(Screen.Home.route) {
                     HomeScreen(
                         onNavigateToProductDetail = { navController.navigate(Screen.ProductDetail.createRoute(it)) },
-                        onNavigateToCatalogue = { navController.navigate(Screen.Catalogue.route) },
+                        onNavigateToCatalogue = { navController.navigateBottomNav(Screen.Catalogue.route) },
                         onNavigateToCategory = { id, name -> navController.navigate(Screen.ProductList.createRoute(id, name)) },
                         onOpenDrawer = { scope.launch { drawerState.open() } },
                         onNavigateToSearch = { navController.navigate(Screen.Search.route) }
@@ -191,6 +247,19 @@ fun AppNavHost(
                     )
                 }
 
+                // Drawer-only screens (no bottom bar, back returns to previous screen)
+                composable(Screen.Wishlist.route) {
+                    WishlistScreen(
+                        onNavigateBack = { navController.popBackStack() }
+                    )
+                }
+
+                composable(Screen.Settings.route) {
+                    SettingsScreen(
+                        onNavigateBack = { navController.popBackStack() }
+                    )
+                }
+
                 // Product list
                 composable(Screen.ProductList.route) { backStack ->
                     val categoryId = backStack.arguments?.getString("categoryId")?.toLongOrNull() ?: 0L
@@ -209,7 +278,7 @@ fun AppNavHost(
                     ProductDetailScreen(
                         bookId = bookId,
                         onNavigateBack = { navController.popBackStack() },
-                        onNavigateToCart = { navController.navigate(Screen.Cart.route) },
+                        onNavigateToCart = { navController.navigateBottomNav(Screen.Cart.route) },
                         onRelatedBookClick = { navController.navigate(Screen.ProductDetail.createRoute(it)) }
                     )
                 }
@@ -243,11 +312,9 @@ fun AppNavHost(
                             }
                         },
                         onNavigateToOrders = {
-                            navController.navigate(Screen.Orders.route) {
-                                popUpTo(Screen.Home.route) { inclusive = false }
-                            }
+                            navController.navigateBottomNav(Screen.Orders.route)
                         },
-                        onCancelOrder = { /* handled inline */ }
+                        onCancelOrder = { /* handled inline in confirmation screen */ }
                     )
                 }
 
@@ -261,91 +328,122 @@ fun AppNavHost(
             }
         }
     }
+    } // inner statusBarsPadding Box
+    } // outer primary-colour Box
 }
 
 @Composable
 fun DrawerContent(
-    navController: androidx.navigation.NavController,
-    drawerState: DrawerState
+    navController: NavController,
+    drawerState: DrawerState,
+    currentRoute: String?
 ) {
     val scope = rememberCoroutineScope()
 
+    // All drawer navigation uses navigateFromDrawer — clears the full back stack
+    // with no saveState so bottom-nav tabs always show a clean screen afterwards.
+    fun navigateAndClose(destination: String) {
+        scope.launch {
+            drawerState.close()
+            navController.navigateFromDrawer(destination)
+        }
+    }
+
     Column(modifier = Modifier.fillMaxHeight().padding(vertical = 24.dp)) {
-        // Header
-        Box(
+        // App header
+        Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 8.dp)
+                .padding(horizontal = 16.dp, vertical = 8.dp),
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Surface(
-                    modifier = Modifier.size(48.dp).clip(CircleShape),
-                    color = MaterialTheme.colorScheme.primaryContainer,
-                    shape = CircleShape
-                ) {
-                    Box(contentAlignment = Alignment.Center) {
-                        Icon(Icons.AutoMirrored.Filled.MenuBook, null, tint = MaterialTheme.colorScheme.onPrimaryContainer, modifier = Modifier.size(28.dp))
-                    }
+            Surface(
+                modifier = Modifier.size(48.dp).clip(CircleShape),
+                color = MaterialTheme.colorScheme.primaryContainer,
+                shape = CircleShape
+            ) {
+                Box(contentAlignment = Alignment.Center) {
+                    Icon(
+                        Icons.AutoMirrored.Filled.MenuBook,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.onPrimaryContainer,
+                        modifier = Modifier.size(28.dp)
+                    )
                 }
-                Spacer(modifier = Modifier.width(12.dp))
-                Column {
-                    Text("BookStore", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.primary)
-                    Text("Your world of books", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                }
+            }
+            Spacer(modifier = Modifier.width(12.dp))
+            Column {
+                Text(
+                    "BookStore",
+                    style = MaterialTheme.typography.titleLarge,
+                    color = MaterialTheme.colorScheme.primary
+                )
+                Text(
+                    "Your world of books",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
             }
         }
 
-        Divider(modifier = Modifier.padding(vertical = 8.dp))
+        HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
 
+        // Profile
         NavigationDrawerItem(
-            icon = { Icon(Icons.Default.Person, null) },
+            icon = { Icon(Icons.Default.Person, contentDescription = null) },
             label = { Text("Profile") },
-            selected = false,
-            onClick = {
-                navController.navigate(Screen.Profile.route)
-                scope.launch { drawerState.close() }
-            },
+            selected = currentRoute == Screen.Profile.route,
+            onClick = { navigateAndClose(Screen.Profile.route) },
             modifier = Modifier.padding(horizontal = 12.dp)
         )
 
+        // My Orders
         NavigationDrawerItem(
-            icon = { Icon(Icons.AutoMirrored.Filled.ReceiptLong, null) },
+            icon = { Icon(Icons.AutoMirrored.Filled.ReceiptLong, contentDescription = null) },
             label = { Text("My Orders") },
-            selected = false,
-            onClick = {
-                navController.navigate(Screen.Orders.route)
-                scope.launch { drawerState.close() }
-            },
+            selected = currentRoute == Screen.Orders.route,
+            onClick = { navigateAndClose(Screen.Orders.route) },
             modifier = Modifier.padding(horizontal = 12.dp)
         )
 
+        // Wishlist — now navigates to its own screen
         NavigationDrawerItem(
-            icon = { Icon(Icons.Default.Favorite, null) },
-            label = { Text("Wishlist (Coming Soon)") },
-            selected = false,
-            onClick = { scope.launch { drawerState.close() } },
+            icon = { Icon(Icons.Default.Favorite, contentDescription = null) },
+            label = { Text("Wishlist") },
+            selected = currentRoute == Screen.Wishlist.route,
+            onClick = { navigateAndClose(Screen.Wishlist.route) },
             modifier = Modifier.padding(horizontal = 12.dp)
         )
 
+        // Settings — now navigates to its own screen
         NavigationDrawerItem(
-            icon = { Icon(Icons.Default.Settings, null) },
+            icon = { Icon(Icons.Default.Settings, contentDescription = null) },
             label = { Text("Settings") },
-            selected = false,
-            onClick = { scope.launch { drawerState.close() } },
+            selected = currentRoute == Screen.Settings.route,
+            onClick = { navigateAndClose(Screen.Settings.route) },
             modifier = Modifier.padding(horizontal = 12.dp)
         )
 
         Spacer(modifier = Modifier.weight(1f))
-        Divider(modifier = Modifier.padding(horizontal = 12.dp))
+        HorizontalDivider(modifier = Modifier.padding(horizontal = 12.dp))
 
+        // Logout
         NavigationDrawerItem(
-            icon = { Icon(Icons.AutoMirrored.Filled.Logout, null, tint = MaterialTheme.colorScheme.error) },
+            icon = {
+                Icon(
+                    Icons.AutoMirrored.Filled.Logout,
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.error
+                )
+            },
             label = { Text("Logout", color = MaterialTheme.colorScheme.error) },
             selected = false,
             onClick = {
-                scope.launch { drawerState.close() }
-                navController.navigate(Screen.Login.route) {
-                    popUpTo(0) { inclusive = true }
+                scope.launch {
+                    drawerState.close()
+                    navController.navigate(Screen.Login.route) {
+                        popUpTo(0) { inclusive = true }
+                    }
                 }
             },
             modifier = Modifier.padding(horizontal = 12.dp)

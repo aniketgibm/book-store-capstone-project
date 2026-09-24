@@ -71,8 +71,8 @@ fun PaymentScreen(
                     }
                     if (uiState.giftPointsDiscount > 0) {
                         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                            Text("Gift Points Discount", style = MaterialTheme.typography.bodySmall, color = androidx.compose.ui.graphics.Color(0xFF2E7D32))
-                            Text("-${formatPrice(uiState.giftPointsDiscount)}", style = MaterialTheme.typography.bodySmall, color = androidx.compose.ui.graphics.Color(0xFF2E7D32))
+                            Text("Gift Points Discount", style = MaterialTheme.typography.bodySmall, color = com.bookstore.ui.theme.SuccessGreen)
+                            Text("-${formatPrice(uiState.giftPointsDiscount)}", style = MaterialTheme.typography.bodySmall, color = com.bookstore.ui.theme.SuccessGreen)
                         }
                     }
                     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
@@ -108,7 +108,7 @@ fun PaymentScreen(
                             Text("🎁 Gift Points", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onSecondaryContainer)
                             Text("You have ${uiState.availableGiftPoints} points (${formatPrice(uiState.availableGiftPoints * 0.10)} value)", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSecondaryContainer)
                             if (useGiftPoints && uiState.giftPointsDiscount > 0) {
-                                Text("Saving ${formatPrice(uiState.giftPointsDiscount)}!", style = MaterialTheme.typography.bodySmall, color = androidx.compose.ui.graphics.Color(0xFF2E7D32))
+                                Text("Saving ${formatPrice(uiState.giftPointsDiscount)}!", style = MaterialTheme.typography.bodySmall, color = com.bookstore.ui.theme.SuccessGreen)
                             }
                         }
                         Switch(

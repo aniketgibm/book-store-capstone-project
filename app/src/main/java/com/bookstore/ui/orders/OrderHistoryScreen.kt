@@ -153,8 +153,8 @@ fun OrderCard(
                 }
                 if (order.discountAmount > 0) {
                     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                        Text("Discount", style = MaterialTheme.typography.bodySmall, color = Color(0xFF2E7D32))
-                        Text("-${formatPrice(order.discountAmount)}", style = MaterialTheme.typography.bodySmall, color = Color(0xFF2E7D32))
+                        Text("Discount", style = MaterialTheme.typography.bodySmall, color = com.bookstore.ui.theme.SuccessGreen)
+                        Text("-${formatPrice(order.discountAmount)}", style = MaterialTheme.typography.bodySmall, color = com.bookstore.ui.theme.SuccessGreen)
                     }
                 }
             }
@@ -210,7 +210,7 @@ fun StatusChip(status: OrderStatus) {
     val (color, label) = when (status) {
         OrderStatus.CONFIRMED -> Pair(Color(0xFF1565C0), "Confirmed")
         OrderStatus.SHIPPED -> Pair(Color(0xFFE65100), "Shipped")
-        OrderStatus.DELIVERED -> Pair(Color(0xFF2E7D32), "Delivered")
+        OrderStatus.DELIVERED -> Pair(com.bookstore.ui.theme.SuccessGreen, "Delivered")
         OrderStatus.CANCELLED -> Pair(Color(0xFFB71C1C), "Cancelled")
         OrderStatus.PENDING -> Pair(Color(0xFF6A1B9A), "Pending")
     }

@@ -442,24 +442,24 @@ public final class DaggerBookStoreApp_HiltComponents_SingletonC {
 
     @IdentifierNameString
     private static final class LazyClassKeyProvider {
-      static String com_bookstore_ui_navigation_SessionViewModel = "com.bookstore.ui.navigation.SessionViewModel";
+      static String com_bookstore_ui_profile_ProfileViewModel = "com.bookstore.ui.profile.ProfileViewModel";
 
       static String com_bookstore_ui_cart_CartViewModel = "com.bookstore.ui.cart.CartViewModel";
 
       static String com_bookstore_ui_home_HomeViewModel = "com.bookstore.ui.home.HomeViewModel";
 
-      static String com_bookstore_ui_profile_ProfileViewModel = "com.bookstore.ui.profile.ProfileViewModel";
+      static String com_bookstore_ui_catalogue_CatalogueViewModel = "com.bookstore.ui.catalogue.CatalogueViewModel";
 
-      static String com_bookstore_ui_auth_AuthViewModel = "com.bookstore.ui.auth.AuthViewModel";
+      static String com_bookstore_ui_navigation_SessionViewModel = "com.bookstore.ui.navigation.SessionViewModel";
 
       static String com_bookstore_ui_orders_OrdersViewModel = "com.bookstore.ui.orders.OrdersViewModel";
 
+      static String com_bookstore_ui_auth_AuthViewModel = "com.bookstore.ui.auth.AuthViewModel";
+
       static String com_bookstore_ui_checkout_CheckoutViewModel = "com.bookstore.ui.checkout.CheckoutViewModel";
 
-      static String com_bookstore_ui_catalogue_CatalogueViewModel = "com.bookstore.ui.catalogue.CatalogueViewModel";
-
       @KeepFieldType
-      SessionViewModel com_bookstore_ui_navigation_SessionViewModel2;
+      ProfileViewModel com_bookstore_ui_profile_ProfileViewModel2;
 
       @KeepFieldType
       CartViewModel com_bookstore_ui_cart_CartViewModel2;
@@ -468,19 +468,19 @@ public final class DaggerBookStoreApp_HiltComponents_SingletonC {
       HomeViewModel com_bookstore_ui_home_HomeViewModel2;
 
       @KeepFieldType
-      ProfileViewModel com_bookstore_ui_profile_ProfileViewModel2;
+      CatalogueViewModel com_bookstore_ui_catalogue_CatalogueViewModel2;
 
       @KeepFieldType
-      AuthViewModel com_bookstore_ui_auth_AuthViewModel2;
+      SessionViewModel com_bookstore_ui_navigation_SessionViewModel2;
 
       @KeepFieldType
       OrdersViewModel com_bookstore_ui_orders_OrdersViewModel2;
 
       @KeepFieldType
-      CheckoutViewModel com_bookstore_ui_checkout_CheckoutViewModel2;
+      AuthViewModel com_bookstore_ui_auth_AuthViewModel2;
 
       @KeepFieldType
-      CatalogueViewModel com_bookstore_ui_catalogue_CatalogueViewModel2;
+      CheckoutViewModel com_bookstore_ui_checkout_CheckoutViewModel2;
     }
   }
 
@@ -622,24 +622,24 @@ public final class DaggerBookStoreApp_HiltComponents_SingletonC {
 
     @IdentifierNameString
     private static final class LazyClassKeyProvider {
-      static String com_bookstore_ui_catalogue_CatalogueViewModel = "com.bookstore.ui.catalogue.CatalogueViewModel";
+      static String com_bookstore_ui_cart_CartViewModel = "com.bookstore.ui.cart.CartViewModel";
 
       static String com_bookstore_ui_checkout_CheckoutViewModel = "com.bookstore.ui.checkout.CheckoutViewModel";
 
       static String com_bookstore_ui_auth_AuthViewModel = "com.bookstore.ui.auth.AuthViewModel";
 
-      static String com_bookstore_ui_cart_CartViewModel = "com.bookstore.ui.cart.CartViewModel";
+      static String com_bookstore_ui_home_HomeViewModel = "com.bookstore.ui.home.HomeViewModel";
 
       static String com_bookstore_ui_profile_ProfileViewModel = "com.bookstore.ui.profile.ProfileViewModel";
 
-      static String com_bookstore_ui_home_HomeViewModel = "com.bookstore.ui.home.HomeViewModel";
-
-      static String com_bookstore_ui_navigation_SessionViewModel = "com.bookstore.ui.navigation.SessionViewModel";
+      static String com_bookstore_ui_catalogue_CatalogueViewModel = "com.bookstore.ui.catalogue.CatalogueViewModel";
 
       static String com_bookstore_ui_orders_OrdersViewModel = "com.bookstore.ui.orders.OrdersViewModel";
 
+      static String com_bookstore_ui_navigation_SessionViewModel = "com.bookstore.ui.navigation.SessionViewModel";
+
       @KeepFieldType
-      CatalogueViewModel com_bookstore_ui_catalogue_CatalogueViewModel2;
+      CartViewModel com_bookstore_ui_cart_CartViewModel2;
 
       @KeepFieldType
       CheckoutViewModel com_bookstore_ui_checkout_CheckoutViewModel2;
@@ -648,19 +648,19 @@ public final class DaggerBookStoreApp_HiltComponents_SingletonC {
       AuthViewModel com_bookstore_ui_auth_AuthViewModel2;
 
       @KeepFieldType
-      CartViewModel com_bookstore_ui_cart_CartViewModel2;
+      HomeViewModel com_bookstore_ui_home_HomeViewModel2;
 
       @KeepFieldType
       ProfileViewModel com_bookstore_ui_profile_ProfileViewModel2;
 
       @KeepFieldType
-      HomeViewModel com_bookstore_ui_home_HomeViewModel2;
-
-      @KeepFieldType
-      SessionViewModel com_bookstore_ui_navigation_SessionViewModel2;
+      CatalogueViewModel com_bookstore_ui_catalogue_CatalogueViewModel2;
 
       @KeepFieldType
       OrdersViewModel com_bookstore_ui_orders_OrdersViewModel2;
+
+      @KeepFieldType
+      SessionViewModel com_bookstore_ui_navigation_SessionViewModel2;
     }
 
     private static final class SwitchingProvider<T> implements Provider<T> {

@@ -68,7 +68,7 @@ fun CartScreen(
                             Text(
                                 if (uiState.deliveryFee == 0.0) "FREE" else formatPrice(uiState.deliveryFee),
                                 style = MaterialTheme.typography.bodyMedium,
-                                color = if (uiState.deliveryFee == 0.0) androidx.compose.ui.graphics.Color(0xFF2E7D32) else MaterialTheme.colorScheme.onSurface
+                                color = if (uiState.deliveryFee == 0.0) com.bookstore.ui.theme.SuccessGreen else MaterialTheme.colorScheme.onSurface
                             )
                         }
                         Divider(modifier = Modifier.padding(vertical = 4.dp))

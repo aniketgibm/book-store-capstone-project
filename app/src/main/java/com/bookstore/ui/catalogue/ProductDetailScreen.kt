@@ -165,7 +165,7 @@ fun ProductDetailScreen(
                                             color = MaterialTheme.colorScheme.onSurfaceVariant
                                         )
                                         val discount = ((book.originalPrice - book.price) / book.originalPrice * 100).toInt()
-                                        Text("${discount}% OFF", style = MaterialTheme.typography.labelSmall, color = Color(0xFF2E7D32))
+                                        Text("${discount}% OFF", style = MaterialTheme.typography.labelSmall, color = com.bookstore.ui.theme.SuccessGreen)
                                     }
                                 }
                             }
@@ -178,7 +178,7 @@ fun ProductDetailScreen(
                                     Icon(
                                         imageVector = if (index < book.rating.toInt()) Icons.Default.Star else Icons.Default.StarBorder,
                                         contentDescription = null,
-                                        tint = Color(0xFFFFC107),
+                                        tint = com.bookstore.ui.theme.StarGold,
                                         modifier = Modifier.size(20.dp)
                                     )
                                 }

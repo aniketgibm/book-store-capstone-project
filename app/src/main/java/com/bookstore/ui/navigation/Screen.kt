@@ -30,6 +30,10 @@ sealed class Screen(val route: String) {
 
     // Search
     object Search : Screen("search")
+
+    // Drawer-only screens
+    object Wishlist : Screen("wishlist")
+    object Settings : Screen("settings")
 }
 
 // Bottom nav tabs

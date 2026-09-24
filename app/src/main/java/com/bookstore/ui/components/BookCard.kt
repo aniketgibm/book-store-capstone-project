@@ -73,7 +73,7 @@ fun BookCard(
                     Icon(
                         imageVector = Icons.Default.Star,
                         contentDescription = null,
-                        tint = Color(0xFFFFC107),
+                        tint = com.bookstore.ui.theme.StarGold,
                         modifier = Modifier.size(12.dp)
                     )
                     Text(
