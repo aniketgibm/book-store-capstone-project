@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bookstore.domain.usecase.payment.RedeemGiftPointsUseCaseTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-09-24T12:25:45.841Z" hostname="Anikets-MacBook-Pro.local" time="0.001">
+  <properties/>
+  <testcase name="exact minimum points succeeds" classname="com.bookstore.domain.usecase.payment.RedeemGiftPointsUseCaseTest" time="0.0"/>
+  <testcase name="redeem valid points succeeds" classname="com.bookstore.domain.usecase.payment.RedeemGiftPointsUseCaseTest" time="0.0"/>
+  <testcase name="redeem more points than available fails" classname="com.bookstore.domain.usecase.payment.RedeemGiftPointsUseCaseTest" time="0.0"/>
+  <testcase name="redeem below minimum threshold fails" classname="com.bookstore.domain.usecase.payment.RedeemGiftPointsUseCaseTest" time="0.001"/>
+  <testcase name="zero points always fails" classname="com.bookstore.domain.usecase.payment.RedeemGiftPointsUseCaseTest" time="0.0"/>
+  <testcase name="discount capped at 50 percent of order total" classname="com.bookstore.domain.usecase.payment.RedeemGiftPointsUseCaseTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

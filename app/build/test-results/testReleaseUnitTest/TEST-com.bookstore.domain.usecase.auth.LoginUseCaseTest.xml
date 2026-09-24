@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bookstore.domain.usecase.auth.LoginUseCaseTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-09-24T12:25:45.126Z" hostname="Anikets-MacBook-Pro.local" time="0.578">
+  <properties/>
+  <testcase name="login with empty password fails without hitting repo" classname="com.bookstore.domain.usecase.auth.LoginUseCaseTest" time="0.568"/>
+  <testcase name="login with empty email fails without hitting repo" classname="com.bookstore.domain.usecase.auth.LoginUseCaseTest" time="0.002"/>
+  <testcase name="login with wrong password returns repo failure" classname="com.bookstore.domain.usecase.auth.LoginUseCaseTest" time="0.004"/>
+  <testcase name="login with valid credentials succeeds" classname="com.bookstore.domain.usecase.auth.LoginUseCaseTest" time="0.002"/>
+  <testcase name="login with invalid email format fails" classname="com.bookstore.domain.usecase.auth.LoginUseCaseTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

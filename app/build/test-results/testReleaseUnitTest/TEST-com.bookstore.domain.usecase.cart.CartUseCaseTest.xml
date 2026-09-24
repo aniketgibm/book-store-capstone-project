@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bookstore.domain.usecase.cart.CartUseCaseTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-09-24T12:25:45.778Z" hostname="Anikets-MacBook-Pro.local" time="0.03">
+  <properties/>
+  <testcase name="add to cart with zero quantity throws" classname="com.bookstore.domain.usecase.cart.CartUseCaseTest" time="0.013"/>
+  <testcase name="add to cart with valid quantity succeeds" classname="com.bookstore.domain.usecase.cart.CartUseCaseTest" time="0.013"/>
+  <testcase name="update quantity with valid value succeeds" classname="com.bookstore.domain.usecase.cart.CartUseCaseTest" time="0.002"/>
+  <testcase name="add to cart with negative quantity throws" classname="com.bookstore.domain.usecase.cart.CartUseCaseTest" time="0.001"/>
+  <testcase name="update quantity with zero throws" classname="com.bookstore.domain.usecase.cart.CartUseCaseTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

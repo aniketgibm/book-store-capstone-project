@@ -1,0 +1,6 @@
+[
+    {
+        "merged": "com.bookstore.app-release-63:/drawable_ic_launcher.xml.flat",
+        "source": "com.bookstore.app-main-64:/drawable/ic_launcher.xml"
+    }
+]

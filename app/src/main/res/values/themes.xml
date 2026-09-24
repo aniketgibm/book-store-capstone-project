@@ -1,0 +1,3 @@
+<resources>
+    <style name="Theme.BookStore" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>

@@ -1,0 +1,70 @@
+com.bookstore.app-foundation-release-0 /Users/aniketgade/.gradle/caches/8.14/transforms/0543a9a8b4b778d4cde3f22a5b78fd46/transformed/foundation-release/res
+com.bookstore.app-lifecycle-runtime-release-1 /Users/aniketgade/.gradle/caches/8.14/transforms/07744d08bfbc8ed104a54f373bdf4d85/transformed/lifecycle-runtime-release/res
+com.bookstore.app-startup-runtime-1.1.1-2 /Users/aniketgade/.gradle/caches/8.14/transforms/0962b5164a36d547a62ec3fa77d2007e/transformed/startup-runtime-1.1.1/res
+com.bookstore.app-annotation-experimental-1.4.1-3 /Users/aniketgade/.gradle/caches/8.14/transforms/118d52b7e22d64bbca7ec7f371065f3d/transformed/annotation-experimental-1.4.1/res
+com.bookstore.app-navigation-runtime-2.8.3-4 /Users/aniketgade/.gradle/caches/8.14/transforms/158dab68929b63fa7e925b6b2d765de6/transformed/navigation-runtime-2.8.3/res
+com.bookstore.app-lifecycle-viewmodel-ktx-2.8.6-5 /Users/aniketgade/.gradle/caches/8.14/transforms/1d7b78b97203b696b78473b7825f2f5c/transformed/lifecycle-viewmodel-ktx-2.8.6/res
+com.bookstore.app-runtime-release-6 /Users/aniketgade/.gradle/caches/8.14/transforms/1e15a270548cac84eaf4cae5536cb079/transformed/runtime-release/res
+com.bookstore.app-ui-tooling-release-7 /Users/aniketgade/.gradle/caches/8.14/transforms/27faaade4b8de15bd6ed3ed2389c7bd0/transformed/ui-tooling-release/res
+com.bookstore.app-sqlite-framework-2.4.0-8 /Users/aniketgade/.gradle/caches/8.14/transforms/2dd3a98156344b9cb6027f4876a19b83/transformed/sqlite-framework-2.4.0/res
+com.bookstore.app-lifecycle-runtime-compose-release-9 /Users/aniketgade/.gradle/caches/8.14/transforms/3001e2419aa4cc803767b166ebfb9b08/transformed/lifecycle-runtime-compose-release/res
+com.bookstore.app-savedstate-ktx-1.2.1-10 /Users/aniketgade/.gradle/caches/8.14/transforms/35ee086f8603a40b5622df1496953a71/transformed/savedstate-ktx-1.2.1/res
+com.bookstore.app-graphics-path-1.0.1-11 /Users/aniketgade/.gradle/caches/8.14/transforms/379cde990fbbfac31e4173c9b5a29614/transformed/graphics-path-1.0.1/res
+com.bookstore.app-ui-graphics-release-12 /Users/aniketgade/.gradle/caches/8.14/transforms/3b7537f7b040f76ab1f18860756c9bd1/transformed/ui-graphics-release/res
+com.bookstore.app-material-ripple-release-13 /Users/aniketgade/.gradle/caches/8.14/transforms/403b61e2b60b09ef8ab46e1af4ab848c/transformed/material-ripple-release/res
+com.bookstore.app-profileinstaller-1.3.1-14 /Users/aniketgade/.gradle/caches/8.14/transforms/4222acf2a879b70eea249c51af91b4f6/transformed/profileinstaller-1.3.1/res
+com.bookstore.app-activity-ktx-1.9.2-15 /Users/aniketgade/.gradle/caches/8.14/transforms/448a3d4fa1f2ebcb71de8b8f4e32e36b/transformed/activity-ktx-1.9.2/res
+com.bookstore.app-fragment-1.5.1-16 /Users/aniketgade/.gradle/caches/8.14/transforms/4ff9d35868b9b840d4c948b6082aafad/transformed/fragment-1.5.1/res
+com.bookstore.app-ui-tooling-data-release-17 /Users/aniketgade/.gradle/caches/8.14/transforms/535fd325976278734e9c5dc417024a63/transformed/ui-tooling-data-release/res
+com.bookstore.app-lifecycle-viewmodel-savedstate-2.8.6-18 /Users/aniketgade/.gradle/caches/8.14/transforms/54ed259e5fc91a82d1de4a3418e56be5/transformed/lifecycle-viewmodel-savedstate-2.8.6/res
+com.bookstore.app-emoji2-1.3.0-19 /Users/aniketgade/.gradle/caches/8.14/transforms/573288fb99671da7bf4ec9e8bf6ab344/transformed/emoji2-1.3.0/res
+com.bookstore.app-navigation-common-2.8.3-20 /Users/aniketgade/.gradle/caches/8.14/transforms/575af048a870cf24d785dd141b7e4215/transformed/navigation-common-2.8.3/res
+com.bookstore.app-ui-test-manifest-1.7.3-21 /Users/aniketgade/.gradle/caches/8.14/transforms/581a84bb300dc99e95c63a64e8f09ee2/transformed/ui-test-manifest-1.7.3/res
+com.bookstore.app-ui-text-release-22 /Users/aniketgade/.gradle/caches/8.14/transforms/5a6fb8a78659a32d7b03759155d789b6/transformed/ui-text-release/res
+com.bookstore.app-ui-util-release-23 /Users/aniketgade/.gradle/caches/8.14/transforms/5bd7b9914b0200abd19dfad1709f6fc9/transformed/ui-util-release/res
+com.bookstore.app-datastore-core-release-24 /Users/aniketgade/.gradle/caches/8.14/transforms/5e7c9e2805b49ebf8cdeed26eb52bc10/transformed/datastore-core-release/res
+com.bookstore.app-customview-poolingcontainer-1.0.0-25 /Users/aniketgade/.gradle/caches/8.14/transforms/5ff1d0f263be6d995161966af6c6f2f2/transformed/customview-poolingcontainer-1.0.0/res
+com.bookstore.app-material3-release-26 /Users/aniketgade/.gradle/caches/8.14/transforms/6c3e0b6fc475fedff93c4015496061c3/transformed/material3-release/res
+com.bookstore.app-hilt-navigation-1.2.0-27 /Users/aniketgade/.gradle/caches/8.14/transforms/708dd9fd483d338f6629b80e9af09bd7/transformed/hilt-navigation-1.2.0/res
+com.bookstore.app-material-release-28 /Users/aniketgade/.gradle/caches/8.14/transforms/745fdde14760128708aced98a454893a/transformed/material-release/res
+com.bookstore.app-coil-base-2.7.0-29 /Users/aniketgade/.gradle/caches/8.14/transforms/78b49aca0dfc0c1d66ee1c8dd0a61b78/transformed/coil-base-2.7.0/res
+com.bookstore.app-room-ktx-2.6.1-30 /Users/aniketgade/.gradle/caches/8.14/transforms/78b9e4aaae5b0d7b4712d54a11273bfd/transformed/room-ktx-2.6.1/res
+com.bookstore.app-lifecycle-viewmodel-compose-release-31 /Users/aniketgade/.gradle/caches/8.14/transforms/7e116371d1410c18d2431d035832d28b/transformed/lifecycle-viewmodel-compose-release/res
+com.bookstore.app-lifecycle-livedata-2.8.6-32 /Users/aniketgade/.gradle/caches/8.14/transforms/848a91651637f7242b880688f1fbbcfc/transformed/lifecycle-livedata-2.8.6/res
+com.bookstore.app-lifecycle-runtime-ktx-release-33 /Users/aniketgade/.gradle/caches/8.14/transforms/8ad96e01153ca6a7c93209c550b58107/transformed/lifecycle-runtime-ktx-release/res
+com.bookstore.app-ui-geometry-release-34 /Users/aniketgade/.gradle/caches/8.14/transforms/8c5435bbee4aeaa386ecc1773755fa45/transformed/ui-geometry-release/res
+com.bookstore.app-datastore-release-35 /Users/aniketgade/.gradle/caches/8.14/transforms/954ac1571dbed99a8819ab5cb54da81d/transformed/datastore-release/res
+com.bookstore.app-lifecycle-process-2.8.6-36 /Users/aniketgade/.gradle/caches/8.14/transforms/9ade618179d1e562e0de6a5601c82c27/transformed/lifecycle-process-2.8.6/res
+com.bookstore.app-lifecycle-livedata-core-2.8.6-37 /Users/aniketgade/.gradle/caches/8.14/transforms/9ef702d35c5682b8ae1633ab60c5fb7f/transformed/lifecycle-livedata-core-2.8.6/res
+com.bookstore.app-appcompat-resources-1.6.1-38 /Users/aniketgade/.gradle/caches/8.14/transforms/a5b3bddc9eac8bac42caf8befd158b6b/transformed/appcompat-resources-1.6.1/res
+com.bookstore.app-foundation-layout-release-39 /Users/aniketgade/.gradle/caches/8.14/transforms/a5c7f008935bf36d3bd25947514a69b9/transformed/foundation-layout-release/res
+com.bookstore.app-ui-tooling-preview-release-40 /Users/aniketgade/.gradle/caches/8.14/transforms/ab5d54fa315203aee5f3fac6be4a0ee5/transformed/ui-tooling-preview-release/res
+com.bookstore.app-hilt-navigation-compose-1.2.0-41 /Users/aniketgade/.gradle/caches/8.14/transforms/b462527947ae0624844f6c815c453622/transformed/hilt-navigation-compose-1.2.0/res
+com.bookstore.app-core-1.13.1-42 /Users/aniketgade/.gradle/caches/8.14/transforms/b679d74c89a2468a18c1ebe0497173f4/transformed/core-1.13.1/res
+com.bookstore.app-datastore-preferences-release-43 /Users/aniketgade/.gradle/caches/8.14/transforms/ba6551ccd93c5f66238fadce78ffdeda/transformed/datastore-preferences-release/res
+com.bookstore.app-sqlite-2.4.0-44 /Users/aniketgade/.gradle/caches/8.14/transforms/bc279450e80485decec99c99a6d862b9/transformed/sqlite-2.4.0/res
+com.bookstore.app-material-icons-extended-release-45 /Users/aniketgade/.gradle/caches/8.14/transforms/c05d83736f6ebb55381aadfe84dc3efa/transformed/material-icons-extended-release/res
+com.bookstore.app-lifecycle-livedata-core-ktx-2.8.6-46 /Users/aniketgade/.gradle/caches/8.14/transforms/c170f7992d5322d20d545ba1e8258b01/transformed/lifecycle-livedata-core-ktx-2.8.6/res
+com.bookstore.app-lifecycle-viewmodel-release-47 /Users/aniketgade/.gradle/caches/8.14/transforms/c266abfcad2cc621287eee6a58df2d8c/transformed/lifecycle-viewmodel-release/res
+com.bookstore.app-savedstate-1.2.1-48 /Users/aniketgade/.gradle/caches/8.14/transforms/c44a9d8a7f7e3f4716174cef0d84e952/transformed/savedstate-1.2.1/res
+com.bookstore.app-room-runtime-2.6.1-49 /Users/aniketgade/.gradle/caches/8.14/transforms/cb04b240756412704eef888c31c5c562/transformed/room-runtime-2.6.1/res
+com.bookstore.app-navigation-compose-2.8.3-50 /Users/aniketgade/.gradle/caches/8.14/transforms/cd22235603bb26124640d6d6229f4aac/transformed/navigation-compose-2.8.3/res
+com.bookstore.app-activity-compose-1.9.2-51 /Users/aniketgade/.gradle/caches/8.14/transforms/cd622b291d348d857f0338d1607cc9d9/transformed/activity-compose-1.9.2/res
+com.bookstore.app-ui-unit-release-52 /Users/aniketgade/.gradle/caches/8.14/transforms/d260a834ff0bf6fc6da4bbfc40b15644/transformed/ui-unit-release/res
+com.bookstore.app-runtime-saveable-release-53 /Users/aniketgade/.gradle/caches/8.14/transforms/d5dc611b14a2d5c00b58d87eda67d947/transformed/runtime-saveable-release/res
+com.bookstore.app-navigation-runtime-ktx-2.8.3-54 /Users/aniketgade/.gradle/caches/8.14/transforms/d810e40134b2aa87f1abe3638984bdc6/transformed/navigation-runtime-ktx-2.8.3/res
+com.bookstore.app-core-ktx-1.13.1-55 /Users/aniketgade/.gradle/caches/8.14/transforms/d99cce339fe752910a32076039d84be3/transformed/core-ktx-1.13.1/res
+com.bookstore.app-animation-core-release-56 /Users/aniketgade/.gradle/caches/8.14/transforms/db5607176c254957389d59f62d4ef7e6/transformed/animation-core-release/res
+com.bookstore.app-core-runtime-2.2.0-57 /Users/aniketgade/.gradle/caches/8.14/transforms/de6fc10efa3ccb1939feaeee183aa420/transformed/core-runtime-2.2.0/res
+com.bookstore.app-material-icons-core-release-58 /Users/aniketgade/.gradle/caches/8.14/transforms/e04ced1254e0f7ee934a9078c7f24621/transformed/material-icons-core-release/res
+com.bookstore.app-ui-release-59 /Users/aniketgade/.gradle/caches/8.14/transforms/e167c2ee494f2f69196e864a9397ba59/transformed/ui-release/res
+com.bookstore.app-navigation-common-ktx-2.8.3-60 /Users/aniketgade/.gradle/caches/8.14/transforms/e846877a3b30646a4eb3968077102a66/transformed/navigation-common-ktx-2.8.3/res
+com.bookstore.app-activity-1.9.2-61 /Users/aniketgade/.gradle/caches/8.14/transforms/edc05727f87a4d87b55fe18fcea40001/transformed/activity-1.9.2/res
+com.bookstore.app-animation-release-62 /Users/aniketgade/.gradle/caches/8.14/transforms/fc5fb039f8f7df158ba49e641e9af78b/transformed/animation-release/res
+com.bookstore.app-pngs-63 /Users/aniketgade/Documents/Bob Project/AiSpecialistCapstoneProject/book-store-capstone-project/app/build/generated/res/pngs/debug
+com.bookstore.app-resValues-64 /Users/aniketgade/Documents/Bob Project/AiSpecialistCapstoneProject/book-store-capstone-project/app/build/generated/res/resValues/debug
+com.bookstore.app-packageDebugResources-65 /Users/aniketgade/Documents/Bob Project/AiSpecialistCapstoneProject/book-store-capstone-project/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.bookstore.app-packageDebugResources-66 /Users/aniketgade/Documents/Bob Project/AiSpecialistCapstoneProject/book-store-capstone-project/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.bookstore.app-debug-67 /Users/aniketgade/Documents/Bob Project/AiSpecialistCapstoneProject/book-store-capstone-project/app/build/intermediates/merged_res/debug/mergeDebugResources
+com.bookstore.app-debug-68 /Users/aniketgade/Documents/Bob Project/AiSpecialistCapstoneProject/book-store-capstone-project/app/src/debug/res
+com.bookstore.app-main-69 /Users/aniketgade/Documents/Bob Project/AiSpecialistCapstoneProject/book-store-capstone-project/app/src/main/res
